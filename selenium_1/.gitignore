@@ -1,6 +1,6 @@
-# Ignore everything in selenium_1 except src
-!/selenium_1/src/
-/selenium_1/*
+# Ignore everything by default
+/*
 
-!/selenium_2/src/
-/selenium_2/*
+# Allow only these
+!.gitignore
+!/src/selenium_1/
