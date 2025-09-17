@@ -3,4 +3,4 @@
 
 # Allow only these
 !.gitignore
-!/src/selenium_2/
+!/src/selenium_2
