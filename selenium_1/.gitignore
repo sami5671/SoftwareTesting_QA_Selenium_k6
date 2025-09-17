@@ -1,0 +1,6 @@
+# Ignore everything in selenium_1 except src
+!/selenium_1/src/
+/selenium_1/*
+
+!/selenium_2/src/
+/selenium_2/*
