@@ -20,7 +20,7 @@ public class Types_of_locators {
 		driver.findElement(By.name("q")).sendKeys("Selenium");
 		Thread.sleep(1000);
 		driver.findElement(By.name("btnK")).click();
-//		
+
 		// link text locator
 		driver.get("http://login.yahoo.com/");
 		driver.findElement(By.linkText("Forgot username?")).click();
