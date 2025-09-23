@@ -23,7 +23,7 @@ public class Types_of_locators {
 
 		// link text locator
 		driver.get("http://login.yahoo.com/");
-		driver.findElement(By.linkText("Forgot username?")).click();
+		driver.findElement(By.linkText("Create an account")).click();
 		driver.navigate().back();
 		
 		// CSS selector locator

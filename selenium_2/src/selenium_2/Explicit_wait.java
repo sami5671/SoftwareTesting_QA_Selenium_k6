@@ -25,7 +25,6 @@ public class Explicit_wait {
 
 	        sendKeys(driver, firstname, Duration.ofSeconds(2000), "sami");
 	        sendKeys(driver, lastname, Duration.ofSeconds(3000), "alam");
-
 	        
 	    }
 

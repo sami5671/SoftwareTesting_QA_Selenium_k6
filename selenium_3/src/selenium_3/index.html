@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and Background */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e9ecef;
+            color: #333;
+        }
+
+        /* Shared Container Styles */
+        #loginPage, #mainPage {
+            width: 400px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Hide Dashboard by Default */
+        #mainPage {
+            display: none;
+            width: 800px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background-image: url('https://via.placeholder.com/100x100.png?text=Logo');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        /* Headings */
+        h2, h3 {
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* Labels and Inputs */
+        label {
+            font-size: 0.9em;
+            color: #555;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Buttons */
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dashboard Container */
+        #mainPage {
+            display: flex;
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            padding: 20px;
+            color: #fff;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .sidebar h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #495057;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #fff;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .menu button:hover {
+            background-color: #6c757d;
+        }
+
+        /* Main Content Area */
+        .content {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .content h2 {
+            text-align: left;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            display: none;
+            text-align: left;
+            color: #555;
+        }
+
+        /* Feedback Messages */
+        #loginMessage, #registrationMessage {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #e74c3c;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage">
+        <div class="logo"></div>
+        <h2>Login</h2>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" placeholder="Enter your User ID">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your Password">
+        <button onclick="login()">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <!-- Main Page with Dashboard -->
+    <div id="mainPage" style="display:none;>
+        <!-- Sidebar Menu -->
+    <script>  loginMessage.textContent = "Hello Admin...!";     </script>
+        <div class="sidebar">
+            <div class="logo"></div>
+                <div class="menu">
+                <h2>Hello Admin...!</h2>
+                <button onclick="showSection('home')">Home</button>
+                <button onclick="showSection('about')">About Us</button>
+                <button onclick="showSection('registration')">Registration</button>
+                <button onclick="showSection('contact')">Contact Us</button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content">
+            <h2>...</h2>
+            <div id="home" class="section">Welcome to the Home page!</div>
+            <div id="about" class="section" style="display:none;">About Us content...</div>
+            <div id="contact" class="section" style="display:none;">Contact Us content...</div>
+
+            <!-- Registration Form -->
+            <div id="registration" class="section" style="display:none;">
+                <h3>Registration Form</h3>
+                <label for="applicantName">Applicant Name:</label>
+                <input type="text" id="applicantName">
+                <label for="applicantAddress">Applicant Address:</label>
+                <input type="text" id="applicantAddress">
+                <label for="applicantAge">Applicant Age:</label>
+                <input type="number" id="applicantAge">
+                <label for="applicantMobile">Applicant Mobile No:</label>
+                <input type="text" id="applicantMobile">
+                <label for="applicantInterest">Applicant Interest:</label>
+                <input type="text" id="applicantInterest">
+                <button onclick="submitForm()">Submit</button>
+                <p id="registrationMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Predefined User Credentials
+        const validUserId = "Admin";
+        const validPassword = "123";
+
+        // Function to handle login
+        function login() {
+            const userId = document.getElementById("userId").value;
+            const password = document.getElementById("password").value;
+            const loginMessage = document.getElementById("loginMessage");
+
+            if (userId === validUserId && password === validPassword) {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("mainPage").style.display = "flex";
+            } else {
+                loginMessage.textContent = "Invalid User ID or Password!";
+            }
+        }
+
+        // Function to handle menu navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = "none");
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        // Function to handle registration form submission
+        function submitForm() {
+            const age = document.getElementById("applicantAge").value;
+            const registrationMessage = document.getElementById("registrationMessage");
+
+            if (age < 20) {
+                registrationMessage.textContent = "You are Registered into Green Group";
+                registrationMessage.style.color = "green";
+            } else {
+                registrationMessage.textContent = "You are Registered into Blue Group";
+                registrationMessage.style.color = "blue";
+            }
+        }
+    </script>
+</body>
+</html>
