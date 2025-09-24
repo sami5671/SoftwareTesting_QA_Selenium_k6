@@ -1,8 +1,16 @@
+// A total number of iterations is distributed across all VUs.
 import http from "k6/http";
 import { check } from "k6";
+
 export const options = {
-  vus: 10,
-  duration: "15s",
+  scenarios: {
+    default: {
+      executor: "shared-iterations",
+      vus: 100,
+      iterations: 500,
+      maxDuration: "30s",
+    },
+  },
 };
 export default function () {
   const url = "https://plant-server-v2-0.vercel.app/auth/login/";

@@ -1,8 +1,23 @@
+// Each VU (virtual user) runs a fixed number of iterations.
+
 import http from "k6/http";
 import { check } from "k6";
+
 export const options = {
-  vus: 10,
-  duration: "15s",
+  cloud: {
+    // Project: Default project
+    projectID: 4650754,
+    // Test runs with the same name groups test runs together.
+    name: "Test (24/09/2025-17:15:08)",
+  },
+  scenarios: {
+    default: {
+      executor: "per-vu-iterations",
+      vus: 100,
+      iterations: 500,
+      maxDuration: "30s",
+    },
+  },
 };
 export default function () {
   const url = "https://plant-server-v2-0.vercel.app/auth/login/";
