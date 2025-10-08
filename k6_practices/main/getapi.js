@@ -6,6 +6,6 @@ export const options = {
   duration: "30s",
 };
 export default function () {
-  http.get("https://plant-server-v2-0.vercel.app/plant/getAllPlants");
+  http.get("https://plant-world-v2.web.app/");
   sleep(1);
 }

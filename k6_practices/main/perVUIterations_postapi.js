@@ -5,22 +5,25 @@ import { check } from "k6";
 
 export const options = {
   cloud: {
-    // Project: Default project
     projectID: 4650754,
-    // Test runs with the same name groups test runs together.
     name: "Test (24/09/2025-17:15:08)",
+  },
+  thresholds: {
+    http_req_failed: ["rate<0.01"],
+    http_req_duration: ["p(95)<1000"],
   },
   scenarios: {
     default: {
       executor: "per-vu-iterations",
-      vus: 100,
-      iterations: 500,
+      vus: 25,
+      iterations: 100,
       maxDuration: "30s",
     },
   },
 };
 export default function () {
   const url = "https://plant-server-v2-0.vercel.app/auth/login/";
+  // const url = "http://localhost:8000/auth/login/";
   const payload = JSON.stringify({
     email: "bepari@gmail.com",
     password: "1234",

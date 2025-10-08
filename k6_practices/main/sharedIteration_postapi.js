@@ -3,6 +3,12 @@ import http from "k6/http";
 import { check } from "k6";
 
 export const options = {
+  cloud: {
+    // Project: Default project
+    projectID: 4650754,
+    // Test runs with the same name groups test runs together.
+    name: "Test (24/09/2025-17:15:08)",
+  },
   scenarios: {
     default: {
       executor: "shared-iterations",
