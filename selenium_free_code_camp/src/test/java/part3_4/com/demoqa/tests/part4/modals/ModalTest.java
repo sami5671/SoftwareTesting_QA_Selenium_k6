@@ -1,4 +1,4 @@
-package part3_4.com.demoqa.tests.part4.screenshot;
+package part3_4.com.demoqa.tests.part4.modals;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
