@@ -19,4 +19,14 @@ public class SwitchToUtility extends Utility{
     public static void dismissAlert(){
         switchTo().alert().dismiss();
     }
+
+    public static void setAlertText(String Text){
+        switchTo().alert().sendKeys(Text);
+    }
+    public static void switchToFrameString(String value){
+        switchTo().frame(value);
+    }
+    public static void switchToDefaultContent(){
+        switchTo().defaultContent();
+    }
 }
