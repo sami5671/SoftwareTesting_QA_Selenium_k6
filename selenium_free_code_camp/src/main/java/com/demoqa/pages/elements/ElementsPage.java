@@ -11,6 +11,12 @@ public class ElementsPage extends HomePage {
     private By dynamicPropertiesMenuItem = By.xpath("//li[@id='item-8']/span[text()='Dynamic Properties']");
     private By textBoxMenuItem = By.xpath("//li[@id='item-0']/span[text()='Text Box']");
 
+    public TextBoxPage clickTextBox() {
+        scrollToElementJS(textBoxMenuItem);
+        click(textBoxMenuItem);
+        return new TextBoxPage();
+    }
+
 
     public DynamicPropertiesPage clickDynamicProperties() {
         scrollToElementJS(dynamicPropertiesMenuItem);
