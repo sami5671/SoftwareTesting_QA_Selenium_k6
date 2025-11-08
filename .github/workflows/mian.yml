@@ -7,8 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Recommended to use a modern version
+
+      - name: Setup K6 🛠️
+        uses: grafana/setup-k6-action@v1 # Step 1: Install k6
+
       - name: Run k6 local test
-        uses: k6io/action@v0.4.0
+        uses: grafana/run-k6-action@v1 # Step 2: Run the test
         with:
-          filename: k6_practices/performanceTesting_11_08_2025/test.js
+          # Use the correct path from your repo root
+          path: k6_practices/performanceTesting_11_08_2025/test.js
