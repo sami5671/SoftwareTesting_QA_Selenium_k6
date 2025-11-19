@@ -1,0 +1,8 @@
+STEP: 1
+npm install cypress --save-dev
+
+STEP: 2
+npx cypress --version
+
+STEP: 3
+npx cypress open
