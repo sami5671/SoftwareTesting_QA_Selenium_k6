@@ -1,0 +1,3 @@
+----- to run performance graph on the localhost -----
+1. winget install k6
+2. k6 run --out web-dashboard Test1.js
